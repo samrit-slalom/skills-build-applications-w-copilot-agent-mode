@@ -1,0 +1,151 @@
+.app-shell {
+  min-height: 100vh;
+}
+
+.app-header {
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.app-nav {
+  display: flex;
+  min-height: 76px;
+  align-items: center;
+  gap: 2rem;
+}
+
+.brand {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 0.65rem;
+  color: #174d3b;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.brand img {
+  object-fit: contain;
+}
+
+.nav-links {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 0.25rem;
+  overflow-x: auto;
+}
+
+.nav-links .nav-link {
+  padding: 0.55rem 0.7rem;
+  color: #66716a;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.nav-links .nav-link.active {
+  color: #174d3b;
+  font-weight: 700;
+}
+
+.api-status {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 0.45rem;
+  color: #59655e;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+}
+
+.api-status-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: #d19a35;
+}
+
+.api-status[data-status='online'] .api-status-dot {
+  background: #2f8a60;
+}
+
+.api-status[data-status='offline'] .api-status-dot {
+  background: #c65c48;
+}
+
+.eyebrow {
+  color: #648071;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.page-title {
+  color: #202b26;
+  font-family: 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+.section-grid {
+  background: rgba(255, 255, 255, 0.52);
+}
+
+.section-summary {
+  min-height: 168px;
+  padding: 1.35rem 1.5rem;
+  border-right: 1px solid #dce3dc;
+}
+
+.section-summary:last-child {
+  border-right: 0;
+}
+
+.section-title {
+  color: #26332c;
+  font-size: 1rem;
+  font-weight: 650;
+}
+
+.section-link {
+  display: inline-grid;
+  width: 2rem;
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid #d4ded5;
+  border-radius: 50%;
+  color: #245f46;
+}
+
+.section-link:hover,
+.section-link:focus-visible {
+  border-color: #245f46;
+  background: #e9f1eb;
+}
+
+@media (max-width: 767.98px) {
+  .app-nav {
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .nav-links {
+    order: 3;
+    flex-basis: 100%;
+  }
+
+  .api-status {
+    margin-left: auto;
+  }
+
+  .section-summary {
+    min-height: 132px;
+    border-right: 0;
+    border-bottom: 1px solid #dce3dc;
+  }
+
+  .section-summary:last-child {
+    border-bottom: 0;
+  }
+}
