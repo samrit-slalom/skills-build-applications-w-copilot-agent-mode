@@ -1,10 +1,16 @@
 import { useEffect, useState } from 'react'
 import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom'
 import octofitLogo from '../../../docs/octofitapp-small.png'
+import Activities from './components/Activities.jsx'
+import Leaderboard from './components/Leaderboard.jsx'
+import Teams from './components/Teams.jsx'
+import Users from './components/Users.jsx'
+import Workouts from './components/Workouts.jsx'
 import './App.css'
 
 const sections = [
   { label: 'Overview', path: '/' },
+  { label: 'Users', path: '/users' },
   { label: 'Activities', path: '/activities' },
   { label: 'Teams', path: '/teams' },
   { label: 'Leaderboard', path: '/leaderboard' },
@@ -54,7 +60,7 @@ function Overview() {
             <div className="d-flex align-items-center justify-content-between gap-3">
               <h2 className="section-title mb-0">{label}</h2>
               <NavLink className="section-link" to={path} aria-label={`Open ${label}`}>
-                <span aria-hidden="true">↗</span>
+                <span aria-hidden="true">Open</span>
               </NavLink>
             </div>
             <p className="text-secondary mt-4 mb-0">No records yet</p>
@@ -62,16 +68,6 @@ function Overview() {
         ))}
       </div>
     </>
-  )
-}
-
-function SectionPage({ title }) {
-  return (
-    <section>
-      <p className="eyebrow mb-2">OCTOFIT / TRACKER</p>
-      <h1 className="page-title">{title}</h1>
-      <p className="text-secondary">No records yet</p>
-    </section>
   )
 }
 
@@ -103,11 +99,12 @@ function App() {
         <main className="container py-5">
           <Routes>
             <Route element={<Overview />} path="/" />
-            <Route element={<SectionPage title="Activities" />} path="/activities" />
-            <Route element={<SectionPage title="Teams" />} path="/teams" />
-            <Route element={<SectionPage title="Leaderboard" />} path="/leaderboard" />
-            <Route element={<SectionPage title="Workouts" />} path="/workouts" />
-            <Route element={<SectionPage title="Not found" />} path="*" />
+            <Route element={<Activities />} path="/activities" />
+            <Route element={<Leaderboard />} path="/leaderboard" />
+            <Route element={<Teams />} path="/teams" />
+            <Route element={<Users />} path="/users" />
+            <Route element={<Workouts />} path="/workouts" />
+            <Route element={<Users />} path="*" />
           </Routes>
         </main>
       </div>
