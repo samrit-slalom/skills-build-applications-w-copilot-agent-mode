@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-import { Activity, LeaderboardEntry, Team, User, Workout } from '../models/index.js'
+import { Activity, Leaderboard, Team, User, Workout } from '../models/index.js'
 
 const connectionString = process.env.MONGODB_URI || 'mongodb://localhost:27017/octofit_db'
 
@@ -15,7 +15,7 @@ async function seedDatabase() {
 
     await Promise.all([
       Activity.deleteMany({}),
-      LeaderboardEntry.deleteMany({}),
+      Leaderboard.deleteMany({}),
       Team.deleteMany({}),
       User.deleteMany({}),
       Workout.deleteMany({}),
@@ -65,7 +65,7 @@ async function seedDatabase() {
       },
     ])
 
-    await LeaderboardEntry.create([
+    await Leaderboard.create([
       { user: jordan._id, points: 1480, period: '2026-W40' },
       { user: priya._id, points: 1325, period: '2026-W40' },
       { user: alex._id, points: 1190, period: '2026-W40' },
@@ -97,7 +97,7 @@ async function seedDatabase() {
       User.countDocuments(),
       Team.countDocuments(),
       Activity.countDocuments(),
-      LeaderboardEntry.countDocuments(),
+      Leaderboard.countDocuments(),
       Workout.countDocuments(),
     ])
 

@@ -1,11 +1,11 @@
 import { Router } from 'express'
-import { Activity, LeaderboardEntry, Team, User, Workout } from '../models/index.js'
+import { Activity, Leaderboard, Team, User, Workout } from '../models/index.js'
 import { createResourceRouter } from './resourceRoutes.js'
 
-export const apiRouter = Router()
+export const router = Router()
 
-apiRouter.use('/users', createResourceRouter(User))
-apiRouter.use('/teams', createResourceRouter(Team))
-apiRouter.use('/activities', createResourceRouter(Activity))
-apiRouter.use('/leaderboard', createResourceRouter(LeaderboardEntry))
-apiRouter.use('/workouts', createResourceRouter(Workout))
+router.use('/api/users/', createResourceRouter(User))
+router.use('/api/teams/', createResourceRouter(Team))
+router.use('/api/activities/', createResourceRouter(Activity))
+router.use('/api/leaderboard/', createResourceRouter(Leaderboard))
+router.use('/api/workouts/', createResourceRouter(Workout))
