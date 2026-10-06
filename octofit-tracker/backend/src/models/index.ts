@@ -1,4 +1,4 @@
-import { model, models, Schema } from 'mongoose'
+import mongoose, { Schema } from 'mongoose'
 
 const userSchema = new Schema(
   {
@@ -46,8 +46,8 @@ const workoutSchema = new Schema(
   { timestamps: true },
 )
 
-export const User = models.User ?? model('User', userSchema)
-export const Team = models.Team ?? model('Team', teamSchema)
-export const Activity = models.Activity ?? model('Activity', activitySchema)
-export const LeaderboardEntry = models.LeaderboardEntry ?? model('LeaderboardEntry', leaderboardSchema)
-export const Workout = models.Workout ?? model('Workout', workoutSchema)
+export const User = mongoose.models.User ?? mongoose.model('User', userSchema)
+export const Team = mongoose.models.Team ?? mongoose.model('Team', teamSchema)
+export const Activity = mongoose.models.Activity ?? mongoose.model('Activity', activitySchema)
+export const LeaderboardEntry = mongoose.models.LeaderboardEntry ?? mongoose.model('LeaderboardEntry', leaderboardSchema)
+export const Workout = mongoose.models.Workout ?? mongoose.model('Workout', workoutSchema)
